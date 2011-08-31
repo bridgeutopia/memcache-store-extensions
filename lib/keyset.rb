@@ -14,24 +14,24 @@ class KeySet < Set
 
   end
 
-  def add_with_cache(value=nil)
-    add_without_cache(value) if value 
+  def add_with_cache(value)
+    add_without_cache(value) 
   ensure
     store
   end
 
   alias_method_chain :add, :cache
 
-  def delete_with_cache(value=nil)
-    delete_without_cache(value) if value
+  def delete_with_cache(value)
+    delete_without_cache(value)
   ensure
     store 
   end
 
   alias_method_chain :delete, :cache
 
-  def clear_with_cache(value=nil)
-    clear_without_cache(value) if value
+  def clear_with_cache(value)
+    clear_without_cache(value)
   ensure
     store
   end
